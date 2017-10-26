@@ -1,8 +1,8 @@
-/* TREEDIST  */
+/* TREEDIST_ALL  */
 /* Written by Chris Creevey */
 /* chris.creevey@gmail.com */
 /* Version 1.1  */
-/* This software returns the path length distance between two taxa on the specified tree */ 
+/* This software returns the path length distance between all taxa on the specified tree */ 
 
 
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 
 	if(argc < 2)
 		{
-		printf("treedist_all:\n\tThis sofware returns the distance between all branches of a tree.\n\tYou must call this software with the name of the file containing the tree, \n\n\tUsage: treedist_all <Tree file name> <matrix|vector> \n\n");
+		printf("treedist_all:\n\tThis sofware returns the distance between all terminal branches of a tree.\n\tYou must call this software with the name of the file containing the tree, \n\n\tUsage: treedist_all <Tree file name> <matrix|vector> \n\n");
 		printf("\tOptional output format specification: matrix (default) or vector\n");
 		exit(1);
 		}

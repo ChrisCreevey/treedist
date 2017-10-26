@@ -1,4 +1,4 @@
-/* TREEDIST  */
+/* TREEDIST_pair  */
 /* Written by Chris Creevey */
 /* chris.creevey@gmail.com */
 /* Version 1.1  */
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 	if(argc < 4)
 		{
-		printf("Treedist:\n\tThis sofware returns the distance between two branches of a tree (including internal branches).\n\tYou must call this software with the name of the file containing the tree, and the names of the two branches\n\n\tUsage: treedist <Tree file name> <Branch name> <Branch name>\n\n");
+		printf("Treedist_pair:\n\tThis sofware returns the distance between two branches of a tree (including internal branches).\n\tYou must call this software with the name of the file containing the tree, and the names of the two branches\n\n\tUsage: treedist <Tree file name> <Branch name> <Branch name>\n\n");
 		exit(1);
 		}
 	if(argc >= 5)
