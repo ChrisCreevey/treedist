@@ -36,8 +36,8 @@ int main(int argc, char *argv[])
     {
     int i=0, j=0, k=0, charactercount = -1, variable = 0, node_number = -1, open = 0, found = FALSE, fromroot = FALSE, first = FALSE, averagelength = FALSE; 
     char number[1000], infilename[1000], branch1[1000], branch2[1000], c = '\0', string[100000], temp[100];
-    float *taxa_weights = '\0', *node_weights = '\0',  **closeP = '\0', branchlength = 0, totallength = 0, lastlength =0, firstlength = 0, x=0, y=0, increase = 0.1;
-	FILE *infile = '\0';
+    float *taxa_weights = NULL, *node_weights = NULL,  **closeP = NULL, branchlength = 0, totallength = 0, lastlength =0, firstlength = 0, x=0, y=0, increase = 0.1;
+	FILE *infile = NULL;
 	
 
 	if(argc < 4)

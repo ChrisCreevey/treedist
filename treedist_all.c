@@ -36,22 +36,22 @@ void clear_memory(void);
 void memory_error(int position);
 
 int taxa_found =0, num_taxa=0, string_length=0;
-float **scores='\0';
-char *string='\0', **taxa_names ='\0';
+float **scores=NULL;
+char *string=NULL, **taxa_names =NULL;
 
 int main(int argc, char *argv[])
     {
     int i=0, j=0, k=0, charactercount = -1, variable = 0, node_number = -1, open = 0, found = FALSE, fromroot = FALSE, first = FALSE, averagelength = FALSE, outfmt=0; 
     char number[1000], infilename[1000], outfilename[1000], c = '\0', temp[100], number2[1000], stringname[1000];
-    float *taxa_weights = '\0', *node_weights = '\0',  **closeP = '\0', branchlength = 0, totallength = 0, lastlength =0, firstlength = 0, x=0, y=0, increase = 0.1;
-	FILE *infile = '\0', *outfile = '\0';
+    float *taxa_weights = NULL, *node_weights = NULL,  **closeP = NULL, branchlength = 0, totallength = 0, lastlength =0, firstlength = 0, x=0, y=0, increase = 0.1;
+	FILE *infile = NULL, *outfile = NULL;
 	
     stringname[0] = '\0';
 
 	if(argc < 2)
 		{
-		printf("treedist_all:\n\tThis sofware returns the distance between all terminal branches of a tree.\n\tYou must call this software with the name of the file containing the tree, \n\n\tUsage: treedist_all <Tree file name> <matrix|vector> \n\n");
-		printf("\tOptional output format specification: matrix (default) or vector\n");
+		printf("treedist_all:\n\tThis sofware returns the distance between all terminal branches of a tree.\n\tYou must call this software with the name of the file containing the tree, \n\n\tUsage: treedist_all <Tree file name> <matrix|vector|text> \n\n");
+		printf("\tOptional output format specification: matrix (default) or vector. \n\tIf a text string is specified instead of \"matrix\" or \"vector\" it should be a whole or part of a taxon name. \n\tIn this case treedist_all will only print in vector format distances to or from taxa that match the text string\n\n");
 		exit(1);
 		}
 	if(argc == 3)
@@ -206,7 +206,7 @@ int main(int argc, char *argv[])
     printf("Started printing distances\n");
     fflush(stdout);
 
-    if(outfmt == 0)
+    if(outfmt == 0) /* If we want to print distances in matrix format */
     	{
 	    for (i=0; i<num_taxa; i++)
 	    	fprintf(outfile, "\t%s", taxa_names[i]);
@@ -227,12 +227,12 @@ int main(int argc, char *argv[])
     		{
     		for(j=i+1; j<num_taxa; j++)
     			{
-                if(outfmt==2)
+                if(outfmt==2) /* If we want to only print distances against taxa that have a particular string (strname)*/
                     {
                     if(strstr(taxa_names[i], stringname) != NULL || strstr(taxa_names[j], stringname) != NULL)   
             			fprintf(outfile, "%s\t%s\t%f\n", taxa_names[i], taxa_names[j], scores[i][j]);
                     }
-                else
+                else /* If we want to print distances in vector format */
                     fprintf(outfile, "%s\t%s\t%f\n", taxa_names[i], taxa_names[j], scores[i][j]);
     			}
     		}
@@ -304,9 +304,9 @@ void memory_error(int position)
 
 void weighted_pathmetric(char *string, float **scores)
     {
-    int i=0, j=0, k=0, l=0, m=0, charactercount = -1, variable = 0, node_number = -1, open = 0, lentmpstring=0, lenstring=0, **numbrackets = '\0';
-    char number[30], *tmpstring ='\0';
-    float *taxa_weights = '\0', *node_weights = '\0',  **closeP = '\0';
+    int i=0, j=0, k=0, l=0, m=0, charactercount = -1, variable = 0, node_number = -1, open = 0, lentmpstring=0, lenstring=0, **numbrackets = NULL;
+    char number[30], *tmpstring =NULL;
+    float *taxa_weights = NULL, *node_weights = NULL,  **closeP = NULL;
 
 
     tmpstring=malloc(string_length*sizeof(char));
@@ -526,7 +526,7 @@ void weighted_pathmetric(char *string, float **scores)
         }
        free(numbrackets);
     free(closeP);
-    closeP = '\0';
+    closeP = NULL;
 	free(taxa_weights);
 	free(node_weights);
 	free(tmpstring);
@@ -538,7 +538,7 @@ void weighted_pathmetric(char *string, float **scores)
     int i=0, j=0, k=0, l=0, m=0, basecount = 0, parentheses=0;
     int foundopen = FALSE, foundclose = FALSE, rooted=FALSE;
 	float del_nodelen = 0;
-	char length[100], *restof='\0';
+	char length[100], *restof=NULL;
 	
 /*	do { 
 		
