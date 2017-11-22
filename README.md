@@ -23,8 +23,10 @@ This comprises two tools that are used to calculate pathlength distance on phylo
   Usage: `treedist_all <Tree file name> <matrix|vector|text>`
   
   Optional output format specification: matrix (default) or vector.
+  
 	If a text string is specified instead of "matrix" or "vector" it should be a whole or part of a taxon name.
-	In this case treedist_all will only print in vector format distances to or from taxa that match the text string
+	
+	In this case treedist_all will only print distances to or from taxa that match the text string (in vector format).
  
   
   ------------------ 
