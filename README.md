@@ -20,9 +20,12 @@ This comprises two tools that are used to calculate pathlength distance on phylo
   
   You must call this software with the name of the file containing the tree
   
-  Usage: `treedist_all <Tree file name> <matrix|vector>`
+  Usage: `treedist_all <Tree file name> <matrix|vector|text>`
   
-  Optional output format specification: matrix (default) or vector  
+  Optional output format specification: matrix (default) or vector.
+	If a text string is specified instead of "matrix" or "vector" it should be a whole or part of a taxon name.
+	In this case treedist_all will only print in vector format distances to or from taxa that match the text string
+ 
   
   ------------------ 
   
@@ -32,6 +35,8 @@ This comprises two tools that are used to calculate pathlength distance on phylo
   cc -o treedist_pair.c -o treedist_pair
   cc -o treedist_all.c -o treedist_all
   ```
+  
+  ------------------ 
   
   ## Example usage:
   
@@ -109,4 +114,28 @@ E	F	0.104000
 *NOTE* that each pair-wise distance is only reported once in vector format.
 
 
-  
+### All distances from taxa matching the text string "A" to everything else
+
+```
+treedist_all testtree.ph A
+```
+
+Which returns in vector format:
+
+```
+A       B       0.030000
+A       C       0.380000
+A       D       0.370000
+A       E       0.261000
+A       F       0.163000
+```
+
+This option allows the full name or partial names to be used, so if you have the taxa "Pan paniscus" and "Pan troglodytes" in your tree and you can specify 
+
+```
+treedist_all TREE Pan
+```
+
+To only output (in vector format) the distances between all species matching the text string "Pan" to all other species.
+
+
