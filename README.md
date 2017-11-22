@@ -8,7 +8,7 @@ This comprises two tools that are used to calculate pathlength distance on phylo
 
   This sofware returns the distance between *two* branches of a tree *(including internal branches)*.
   
-  You must call this software with the name of the file containing the tree, and the names of the two branches
+  This software is called with the name of the file containing the tree, and the names of the two branches
   
   Usage: `treedist <Tree file name> <Branch name> <Branch name>`
  
@@ -18,7 +18,7 @@ This comprises two tools that are used to calculate pathlength distance on phylo
 
   This sofware returns the pathlength distances between *all* terminal branches of a tree.
   
-  You must call this software with the name of the file containing the tree
+  This software is called with the name of the file containing the tree
   
   Usage: `treedist_all <Tree file name> <matrix|vector|text>`
   
