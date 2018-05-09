@@ -1,6 +1,9 @@
 # treedist
 #### Rapid calculation of pathlength distances between taxa on phlyogenetic trees
 
+[![DOI](https://zenodo.org/badge/108401368.svg)](https://zenodo.org/badge/latestdoi/108401368)
+
+
 This comprises two tools that are used to calculate pathlength distance on phylogenetic trees.
 
 ------------------
