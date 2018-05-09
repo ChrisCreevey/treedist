@@ -1,7 +1,7 @@
 # treedist
 #### Rapid calculation of pathlength distances between taxa on phlyogenetic trees
 
-[![DOI](https://zenodo.org/badge/108401368.svg)](https://zenodo.org/badge/latestdoi/108401368)
+If you use this tool, please reference this DOI: [![DOI](https://zenodo.org/badge/108401368.svg)](https://zenodo.org/badge/latestdoi/108401368)
 
 
 This comprises two tools that are used to calculate pathlength distance on phylogenetic trees.
@@ -9,9 +9,9 @@ This comprises two tools that are used to calculate pathlength distance on phylo
 ------------------
 #### treedist_pair:
 
-  This sofware returns the distance between *two* branches of a tree *(including internal branches)*.
+  This software returns the distance between *two* branches of a tree *(including internal branches)*.
   
-  This software is called with the name of the file containing the tree, and the names of the two branches
+  This softtware is called with the name of the file containing the tree, and the names of the two branches
   
   Usage: `treedist <Tree file name> <Branch name> <Branch name>`
  
@@ -19,9 +19,9 @@ This comprises two tools that are used to calculate pathlength distance on phylo
 
 #### treedist_all:
 
-  This sofware returns the pathlength distances between *all* terminal branches of a tree.
+  This software returns the pathlength distances between *all* terminal branches of a tree.
   
-  This software is called with the name of the file containing the tree
+  This softtware is called with the name of the file containing the tree
   
   Usage: `treedist_all <Tree file name> <matrix|vector|text>`
   
